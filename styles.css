@@ -1,0 +1,523 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+
+    background-image: url('assets/Sunset-Oregon-Beach-2560x1600.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#login {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form {
+    width: 50%;
+    /* height: 40%; */
+
+    /* border: 2px solid white; */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+#home {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    padding: 2%;
+}
+
+#loader {
+    background-color: rgb(33, 33, 33);
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.circle {
+    width: 64px;
+    height: 64px;
+    background-color: rgb(33, 33, 33);
+    border-radius: 50%;
+    border: 5px solid white;
+    border-top: 5px solid rgb(33, 33, 33);
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.border-orange {
+    border: 5px solid rgb(235, 140, 45) !important;
+    border-top: 5px solid rgb(33, 33, 33) !important;
+}
+
+.border-green {
+    border: 5px solid rgb(50, 199, 70) !important;
+    border-top: 5px solid rgb(33, 33, 33) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-medium {
+    font-weight: 500;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.card {
+    background-image: linear-gradient(rgba(122, 122, 122, 0.5), rgba(24, 116, 220, 0.5));
+    /* border: 2px solid white; */
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+
+    padding: 20px;
+    margin: 20px;
+
+    width: 20%;
+    display: inline-table;
+    cursor: pointer;
+}
+
+#home #topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    height: 5vh;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
+    /* border-bottom: 1px solid rgb(9, 85, 204); */
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+    background-blend-mode: multiply, multiply; */
+    /* background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+    background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%); */
+    /* background-image: linear-gradient(to right, #5c39c3 0%, #2575fc 100%); */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    border-bottom: 0.1px solid rgba(224, 224, 224, 0.551);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+#home #topbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home #topbar ul li {
+    margin-right: 20px;
+    font-size: smaller;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+
+#home #topbar ul li:hover {
+    /* color: rgb(235, 140, 45); */
+    background-color: rgb(147, 147, 147);
+    border-radius: 5px;
+}
+
+#home #taskbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 95%;
+    /* height: 5vh; */
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    bottom: 2vh;
+    left: 2%;
+    /* background-image: linear-gradient(to right, #5c39c3 0%, #2575fc 100%); */
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 0.1px solid rgb(109, 109, 109);
+}
+
+#home #taskbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+#home #taskbar ul li {
+    margin-right: 20px;
+    font-size: smaller;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+#home #taskbar ul li a {
+    color: rgb(233, 230, 230);
+    text-decoration: none;
+}
+
+.notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(61, 105, 194);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: smaller;
+    z-index: 200;
+
+    width: fit-content;
+}
+
+#desk {
+    margin-top: 10vh;
+}
+
+.app {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    max-width: 128px;
+    padding: 5px;
+    padding-bottom: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.app-image img {
+    width: 64px;
+    height: 64px;
+    border-radius: 10%;
+    /* border: 0.1px solid white; */
+    /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); */
+}
+
+.app-title {
+    text-align: center;
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.app-title * {
+    font-weight: 300;
+    margin: 0.8em;
+    cursor: pointer;
+}
+
+.app:hover {
+    /* transform: scale(1.1);
+    transition: 0.5s;
+
+    border: 2px solid white;
+    border-radius: 10px;
+
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5); */
+
+    border-radius: 4px;
+
+    background-image: linear-gradient(rgba(122, 122, 122, 0.5), rgba(24, 116, 220, 0.5));
+}
+
+@media screen and (max-width: 1000px) {
+    /* #home #topbar {
+        display: none;
+    } */
+
+    #home #taskbar {
+        display: none;
+    }
+
+    #taskbar ul li {
+        margin: 0;
+        padding: 0;
+    }
+
+    #taskbar ul li svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    #datefillJs {
+        display: none;
+    }
+
+    #predatebarrier {
+        display: none;
+    }
+}
+
+.app-window {
+    /* display: none; */
+    position: fixed;
+    /* width: 40%; */
+    /* height: 60%; */
+    min-width: 40%;
+    min-height: 60%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(63, 63, 63); */
+    /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+    /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%); */
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    z-index: 100;
+    left: 30%;
+    border: 0.1px solid rgb(145, 145, 145);
+    border-radius: 2%;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+    padding-bottom: 2%;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+}
+
+.app-window .aw-titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    padding-left: 10px;
+    /* background-color: rgb(33, 33, 33); */
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+    background-blend-mode: multiply, multiply; */
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.app-window .aw-titlebar h3 {
+    margin: 0;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.app-window .aw-titlebar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.app-window .aw-titlebar ul li {
+    margin-right: 10px;
+    cursor: pointer;
+
+    border-radius: 50%;
+    /* border: 0.1px solid white; */
+    padding: 5px;
+}
+
+.app-window .aw-titlebar ul li:first-child {
+    background-color: red;
+}
+
+.app-window .aw-titlebar ul li:nth-child(2) {
+    background-color: rgb(228, 185, 44);
+}
+
+.app-window .aw-titlebar ul li:last-child {
+    background-color: rgb(7, 177, 7);
+}
+
+.app-textarea {
+    width: 90%;
+    resize: none;
+    margin: 4%;
+    padding: 1%;
+    /* border: 0.1px solid rgb(145, 145, 145); */
+    /* border-radius: 2%; */
+    background-color: rgb(33, 33, 33);
+    color: rgb(206, 206, 206);
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    border: none;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.app-window-popIn {
+    animation: popIn 0.5s linear;
+}
+
+.btn-save {
+    position: relative;
+    left: 5%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-save:hover {
+    background-color: rgb(45, 124, 235);
+    box-shadow: none;
+}
+
+.btn-saveas {
+    position: relative;
+    left: 5%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-saveas:hover {
+    background-color: rgb(45, 124, 235);
+    box-shadow: none;
+}
+
+@keyframes expanddiv {
+    0% {
+        width: 0;
+    }
+
+    70% {
+        top: 5vh;
+        left: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.app-devcont {
+    padding: 2%;
+    color: rgb(210, 210, 210);
+}
+
+.app-contents {
+    padding: 5%;
+    font-weight: 300;
+    letter-spacing: 3px;
+    max-height: 60%;
+    min-height: 60%;
+    overflow-y: scroll;
+}
+
+.app-contents a {
+    color: rgb(33, 184, 114);
+    text-decoration: none;
+    font-weight: 400;
+}
